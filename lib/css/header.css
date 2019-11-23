@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenedorheader a{
+    color: #fff;
+}
+.contenedorheader h1{
+    padding: .5em;
+}
+header{
+    height: 5em;
+    background-color: rgba(0,0,0,.5);
+    list-style: none;
+    text-align: center;
+}
+.contenedorheader{
+    width: 100%;
+    height: 100%;
+    background-color: cadetblue;
+    margin: auto;
+}
