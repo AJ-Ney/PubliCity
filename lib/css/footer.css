@@ -1,4 +1,4 @@
-footer{
+.piepagina{
     width: 100%;
     height: 3rem;
     background-color: rgba(0,0,0,.5);
@@ -9,6 +9,6 @@ footer{
 }
 .contenedorfooter{
     width: 100%;
-    padding: .9rem;
+    padding: .7rem;
     text-align: center;
 }
