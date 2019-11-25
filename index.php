@@ -1,41 +1,10 @@
 <?php include '../PubliCity/lib/include/header.php'; ?> 
 <body>
-
-    <main>
-        <section class="banner">
-            <img src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="">
-            <div class="contenedortexto">
-                <a href="#modal">
-                    <h2>Titulo1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime consequatur a repudiandae porro ratione velit laborum, culpa reiciendis illo ullam quis inventore facere incidunt ab esse adipisci architecto deleniti?</p>
-                    <p class="redactor"> &nbsp;&nbsp;&nbsp;&nbsp;Nombre nom Apelli ape</p>
-                    <p class="publicado">Públicado el: 23/11/2019&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                </a>
-            </div>
-        </section>
-        <section class="banner">
-            <img src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="">
-            <div class="contenedortexto">
-                <a href="#modal">
-                    <h2>Titulo2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime consequatur a repudiandae porro ratione velit laborum, culpa reiciendis illo ullam quis inventore facere incidunt ab esse adipisci architecto deleniti?</p>
-                    <p class="redactor">&nbsp;&nbsp;&nbsp;&nbsp;Nombre nom Apelli ape</p>
-                    <p class="publicado">Públicado el: 23/11/2019&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                </a>
-            </div>
-        </section>
-        <section class="banner">
-            <img src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="">
-            <div class="contenedortexto">
-                
-                <a href="#modal">
-                    <h2>Titulo3</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime consequatur a repudiandae porro ratione velit laborum, culpa reiciendis illo ullam quis inventore facere incidunt ab esse adipisci architecto deleniti?</p>
-                    <p class="redactor">&nbsp;&nbsp;&nbsp;&nbsp;Nombre nom Apelli ape</p>
-                    <p class="publicado">Públicado el: 23/11/2019 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                </a>
-            </div>
-        </section>
+<aside>
+<a href="#" id="linknoticia">ASDASDASDSADSA</a>
+</aside>
+    <main id="noticias">
+    <!-- Noticias desde la mas vista a la menos -->
     </main>
     
     <aside id="modal" class="modal">
@@ -48,11 +17,11 @@
             <article>
                 <!-- contenido -->
                 <div class="cont-text">
-                    <h2>Titulo 1</h2>
-                    <h4>Subtituli Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla omnis unde, voluptate, nisi beatae dolores veritatis iusto earum ducimus recusandae ulla</h4>
+                    <h2 id="titulo-modal">Titulo 1</h2>
+                    <h4 id="subtitulo-modal">Subtituli Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla omnis unde, voluptate, nisi beatae dolores veritatis iusto earum ducimus recusandae ulla</h4>
                 </div>
                 <div class="contenidonoticia">
-                    <img src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
+                    <img id="img-modal" src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illo officia eveniet. Velit aliquid natus excepturi. Deserunt aut itaque neque! Provident cum odio maxime molestiae suscipit expedita quod natus exercitationem!
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae aliquam sequi ex? Facilis voluptates vero blanditiis voluptatem? Reiciendis incidunt maiores eos labore sit at dolores quaerat tempora ducimus rerum?
                     Delectus, quibusdam. Laudantium dolores cumque corrupti animi quo error sequi, unde excepturi optio molestiae eligendi deserunt corporis quis hic, reprehenderit, eveniet pariatur eaque ut perspiciatis vel voluptas! Aperiam, vitae tempore?
@@ -76,7 +45,12 @@
     </aside>
 
 
-    <?php include '../PubliCity/lib/include/footer.php' ?>
-    <script src="lib/include/footer.file.php"></script>
+    <?php 
+        include 'lib/include/footer.php';
+        include 'lib/include/footer.file.php';
+    ?>
+    <script src="admin/noticias.js"></script>
+
+    
 </body>
 </html>

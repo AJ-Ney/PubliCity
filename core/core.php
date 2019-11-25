@@ -1,11 +1,8 @@
 <?php
 require_once '../config/conexion.php';
-/**
-* 
-*/
+
 class Core 
 {
-	// private $pdo;
 
 	public function getConexion()
 	{

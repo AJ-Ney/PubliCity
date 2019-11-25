@@ -8,6 +8,12 @@ INSERT INTO tb_categorias (categoria) VALUES (categoria);
 END $$
 
 DELIMITER $$
+CREATE PROCEDURE sp_categoria_listar()
+BEGIN
+	SELECT * FROM tb_categorias ORDER BY id DESC;
+END $$
+
+DELIMITER $$
 CREATE PROCEDURE sp_noticias_registrar(
 IN _categoria	INT,
 IN _titulo VARCHAR(150),

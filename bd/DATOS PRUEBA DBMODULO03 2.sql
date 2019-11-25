@@ -9,3 +9,5 @@ CALL sp_noticias_registrar(7,'Titulo7','','Subtitulo7','descripcion7','redactor7
 CALL sp_noticias_listar();
 
 CALL sp_vistas_suma(7);
+
+SET FOREIGN_KEY_CHECKS = 1;
