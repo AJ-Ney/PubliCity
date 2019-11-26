@@ -99,7 +99,7 @@ article .cont-text h4{
 article .contenidonoticia{
     width: 100%;
 }
-article .contenidonoticia img{
+article .contenidonoticia .img-noti{
     width: 60%;
     float: right;
 }

@@ -1,8 +1,5 @@
 <?php include '../PubliCity/lib/include/header.php'; ?> 
 <body>
-<aside>
-<a href="#" id="linknoticia">ASDASDASDSADSA</a>
-</aside>
     <main id="noticias">
     <!-- Noticias desde la mas vista a la menos -->
     </main>
@@ -21,7 +18,7 @@
                     <h4 id="subtitulo-modal">Subtituli Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla omnis unde, voluptate, nisi beatae dolores veritatis iusto earum ducimus recusandae ulla</h4>
                 </div>
                 <div class="contenidonoticia">
-                    <img id="img-modal" src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
+                    <img class="img-noti" id="img-modal" src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illo officia eveniet. Velit aliquid natus excepturi. Deserunt aut itaque neque! Provident cum odio maxime molestiae suscipit expedita quod natus exercitationem!
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae aliquam sequi ex? Facilis voluptates vero blanditiis voluptatem? Reiciendis incidunt maiores eos labore sit at dolores quaerat tempora ducimus rerum?
                     Delectus, quibusdam. Laudantium dolores cumque corrupti animi quo error sequi, unde excepturi optio molestiae eligendi deserunt corporis quis hic, reprehenderit, eveniet pariatur eaque ut perspiciatis vel voluptas! Aperiam, vitae tempore?
@@ -36,7 +33,7 @@
                 <p class="publicado">
                     Publicado el: 24/11/2019
                     &nbsp;&nbsp;
-                    <span><i>Leidas:</i></span>
+                    <span><i id="views">Leidas:</i></span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
                 <!-- final del modal -->
