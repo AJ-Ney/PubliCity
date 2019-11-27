@@ -1,4 +1,4 @@
-<?php include '../PubliCity/lib/include/header.php'; ?> 
+<?php include './lib/include/header.php'; ?> 
 <body>
     <main id="noticias">
     <!-- Noticias desde la mas vista a la menos -->
