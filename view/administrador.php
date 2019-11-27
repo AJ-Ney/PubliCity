@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./../lib/css/header.css">
     <link rel="stylesheet" href="./../lib/css/body.css">
     <link rel="stylesheet" href="./../lib/css/footer.css">
-    <link rel="stylesheet" href="./../lib/datatable/css/datatables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./../lib/fontawesome/css/all.css"> 
     <title>PubliCity</title>
     
 </head>
@@ -30,15 +31,15 @@
                   <table class="table-bordered" id="datable" width="80%" cellspacing="0">
                     <thead class="text-center">
                       <tr>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                        <th>6</th>
-                        <th>7</th>
-                        <th>8</th>
-                        <th>9</th>
+                        <th>N°</th>
+                        <th>Titulo</th>
+                        <th>Sub-Titulo</th>
+                        <th>Descripción</th>
+                        <th>Redactor</th>
+                        <th>Publicado</th>
+                        <th>Modificado</th>
+                        <th>Vistas</th>
+                        <th>Administrar</th>
                     </tr>
                     </thead>
                     <tbody id="data"></tbody>
@@ -52,7 +53,9 @@
 
     <?php include './../lib/include/footer.php' ?>
     <script src="./../lib/jquery/jquery-3.4.1.min.js"></script>
-    <script src="./../lib/datatable/js/datatables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="./../lib/fontawesome/js/all.js"></script>
+    <script src="./../admin/administrador.js"></script>
     
 </body>
 </html>

@@ -8,10 +8,10 @@ class NoticiaM extends Core{
     public function __CONSTRUCT(){
         return $this->pdo=parent::getConexion();
     }
-
+    /* Usuario */
     public function Listar(){
         try {
-            $stmt=$this->pdo->prepare("call sp_noticias_listar");
+            $stmt=$this->pdo->prepare("call sp_noticias_mostrar");
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $th) {
@@ -21,11 +21,21 @@ class NoticiaM extends Core{
 
     public function verNoticia($id){
         try {
-            $stmt=$this->pdo->prepare(("call sp_noticia_listar(?)"));
+            $stmt=$this->pdo->prepare(("call sp_noticia_ver(?)"));
             $stmt->execute(array($id));
             return $stmt->fetch(PDO::FETCH_OBJ);
-        } catch (\Throwable $th) {
-            //throw $th;
+        } catch (Exception $th) {
+            die($th->getMessage());
+        }
+    }
+    /* Administrador */
+    public function noticiasListar(){
+        try{
+            $stmt=$this->pdo->prepare("call sp_noticias_listar");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }catch (Exception $e){
+            die($e->getMessage());
         }
     }
     
