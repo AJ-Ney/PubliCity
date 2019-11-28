@@ -41,7 +41,7 @@ class NoticiaM extends Core{
     
     public function Registrar(NoticiaE $obj){
         try{
-            $imagen = $obj->image=addslashes((file_get_contents($_FILES['imagen']['tmp_name'])));
+            /* $imagen = $obj->image=addslashes((file_get_contents($_FILES['imagen']['tmp_name']))); */
             $stmt=$this->pdo->prepare("call sp_noticias_registrar(?,?,?,?,?,?)");
             $stmt->execute(array(
                 $obj->__GET('categoria'),

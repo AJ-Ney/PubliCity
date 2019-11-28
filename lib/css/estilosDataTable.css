@@ -1,0 +1,54 @@
+/* Estilos del boy */
+body{
+    margin-top: 7rem;
+}
+.text-center{
+    text-align:center;
+}
+section tbody tr .centro{
+    text-align: center;
+}
+section tbody tr td .modificar{
+    color: #0087FF;
+}
+section tbody tr td .eliminar{
+    color: #FF2300;
+}
+section tbody tr td .imagen img{
+    width: 5rem;
+}
+section tbody tr td .imagen img:hover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40rem;
+    box-shadow: 0 0 15px 2px #000;
+}
+.main{
+    width: 90%;
+    margin: auto;
+}
+/* Estilos para el header */
+.cabezera .contenedorheader{
+    
+}
+.cabezera .cont-logo{
+    float: left;
+}
+.cabezera .nav{
+    float: right;
+    margin-right: 1rem;
+    line-height: 5rem;
+}
+.cabezera .nav a{
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all .6s linear;
+}
+.cabezera .nav a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
