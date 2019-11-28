@@ -11,9 +11,9 @@
 
 .modal .content-modal{
     width: 100%;
-    max-width: 60%;
+    max-width: 70%;
     position: fixed;
-    left: 35.8%;
+    left: 35%;
     top: -100vh;
     transition: top 0.35s ease;
     margin-left: -250px;
@@ -92,10 +92,15 @@ article .cont-text h4{
 }
 /* Contenido de la noticia */
 article .contenidonoticia{
+    font-family: 'Times New Roman', cursive;
+    letter-spacing: .01rem;
     width: 100%;
     text-align: justify;
+    padding: 1em;
 }
 article .contenidonoticia .img-noti{
+    margin-left: 1em;
+    margin-bottom: 1em;
     width: 60%;
     float: right;
 }
