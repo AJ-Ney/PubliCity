@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./../lib/css/footer.css">
     <link rel="stylesheet" href="./../lib/css/estilosDataTable.css">
     <link rel="stylesheet" href="./../lib/css/estilos.modal.registros.css">
+    <link rel="stylesheet" href="./../lib/css/form.css">
     <title>PubliCity</title>
     
 </head>
@@ -61,11 +62,43 @@
             <hr>
             <article>
                 <!-- Datos ha registrar -->
-                
+                <div class="contenedor1">
+                  <div class="cont-R-titulo">
+                    <label for="titulo">Titulo</label>
+                    <input id="titulo" name="titulo" type="text">
+                  </div>
+                  <div class="cont-R-subtitulo">
+                    <label for="subtitulo">Sub-Titulo</label>
+                    <input id="subtitulo" name="subtitulo" type="text">
+                  </div>
+                  <div class="cont-R-categori">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" id="categoria">
+                      <!-- Categorias vargar dinamica -->
+                    </select>
+                  </div>
+                  <div class="cont-R-imagen">
+                    <label for="imagen-file">Subir imagen</label>
+                    <input id="imagen-file" name="imagen-file" type="file">
+                  </div>
+                  <div class="cont-R-descripcion">
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="cont-R-redactor">
+                    <label for="">Redactor</label>
+                    <input id="redactor" name="redactor" type="text">
+                  </div>
+                </div>
             </article>
-            <hr>
-            <footer>
-                <!-- pie del modal -->
+            <footer id="probando">
+                <div class="cont-botones">
+                  <div class="boton-1">
+                    <a class="botones" id="publicar" href="#">Publicar</a>
+                  </div>
+                  <div class="boton-2">
+                    <a class="botones"  id="cancelar" href="#">Cancelar</a>
+                  </div>
+                </div>
             </footer>
         </div>
     </aside>
@@ -74,6 +107,7 @@
     <script src="./../lib/jquery/jquery-3.4.1.min.js"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="./../lib/fontawesome/js/all.js"></script>
+    <script src="./../lib/ckeditor/ckeditor.js"></script>
     <script src="./../admin/administrador.js"></script>
     
 </body>

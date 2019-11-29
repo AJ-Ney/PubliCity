@@ -2,6 +2,10 @@
 body{
     margin-top: 7rem;
 }
+#datable tbody tr td{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0;
+}
 .text-center{
     text-align:center;
 }

@@ -1,0 +1,96 @@
+.modal .content-modal{
+    max-width: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.contenedor1{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+    margin-top: 1rem;
+    width: 90%;
+}
+input{
+    display: flex;
+    width: 90%;
+    padding: 0.3rem;
+    border-radius: .5rem;
+    border: 1px solid silver;
+}
+input[type="text"]{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: .1em;
+}
+textarea{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: .1em;
+}
+div[class^="cont-R-"]{
+    margin-bottom: 1rem;
+}
+input[type="file"]{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+label[for="imagen-file"]{
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    width: 90%;
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid silver;
+    border-radius: .5rem;
+}
+label[for="imagen-file"]:hover{
+    border: 1px solid rgb(20, 162, 245);
+}
+select[name="categoria"]{
+    width: 90%;
+    padding: 0.3rem;
+    border-radius: .5rem;
+}
+textarea{
+    padding: 0.3rem;
+    width: 90%;
+}
+div[class="botones"]{
+    width: 100%;
+}
+a[class="botones"]{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+}
+a[class="botones"]:hover{
+    color: #000;
+}
+div[class="cont-botones"]{
+    width: 100%;
+}
+div[class^="boton-"]{
+    width: 50%;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    transition: all .357s ease;
+}
+div[class="boton-1"]{
+    float: right;
+    background-color: #0087FF;
+}
+div[class="boton-2"]{
+    float: left;
+    background-color: rgba(255, 60, 0, 0.952);
+}
+div[class^="boton-"]:hover{
+    background-color: rgba(0, 0, 0,.5);
+}

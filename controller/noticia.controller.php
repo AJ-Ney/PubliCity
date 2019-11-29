@@ -53,7 +53,7 @@ if(isset($_GET['accion'])){
                     </td>'.
                     '<td class="centro">
                     <a href="#" class="modificar" data-id="'.$row->id.'" title="Modificar"><i class="fa fa-edit text-primary"></i></a>
-                    <a href="#" class="eliminar" data-id="'.$row->id.'" title="Eliminar"><i class="fa fa-edit text-danger"></i></a>
+                    <a href="#" class="eliminar" data-id="'.$row->id.'" title="Eliminar"><i class="fas fa-trash-alt text-danger"></i></a>
                     </td>'.
                 '</tr>'
                 ;
@@ -61,7 +61,13 @@ if(isset($_GET['accion'])){
     }
     
     if($_GET["accion"]=="registrar"){
-        
+        $E->__SET('titulo',$_GET['titulo']);
+        $E->__SET('subtitulo',$_GET['subtitulo']);
+        $E->__SET('categoria',$_GET['categoria']);
+        $E->__SET('image',$_GET['image']);
+        $E->__SET('descripcion',$_GET['descripcion']);
+        $E->__SET('redactor',$_GET['redactor']);
+        $M->Registrar($E);
     }
 }//fin isset = accion
 ?>
