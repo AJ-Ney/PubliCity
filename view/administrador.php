@@ -53,7 +53,8 @@
     
   <aside id="modal" class="modal">
         <div class="content-modal">
-            <header class="header-modal">
+          <form role="form" enctype="multipart/form-data">
+          <header class="header-modal">
               <div class="d">
                 <a href="#" class="close-modal">X</a>
                 <h2>Nueva noticia</h2>
@@ -79,7 +80,7 @@
                   </div>
                   <div class="cont-R-imagen">
                     <label for="imagen-file">Subir imagen</label>
-                    <input id="imagen-file" name="imagen-file" type="file">
+                    <input id="imagen-file" name="imagen-file" type="file" accept=".jpg">
                   </div>
                   <div class="cont-R-descripcion">
                     <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
@@ -93,13 +94,15 @@
             <footer id="probando">
                 <div class="cont-botones">
                   <div class="boton-1">
-                    <a class="botones" id="publicar" href="#">Publicar</a>
+                    <button type="button" id="publicar">Publicar</button>
+                    <!-- <a class="botones"  href="#">Publicar</a> -->
                   </div>
                   <div class="boton-2">
                     <a class="botones"  id="cancelar" href="#">Cancelar</a>
                   </div>
                 </div>
             </footer>
+          </form>
         </div>
     </aside>
 

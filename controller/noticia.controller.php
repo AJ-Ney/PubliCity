@@ -6,8 +6,8 @@ require_once '../model/noticia/noticia.modelo.php';
 $E = new NoticiaE();
 $M = new NoticiaM();
 
-if(isset($_GET['accion'])){
-    if($_GET['accion']=='listar'){
+if(isset($_POST['accion'])){
+    if($_POST['accion']=='listar'){
         $data = $M->Listar();
         foreach($data as $row){
             echo '<section class="banner">';
@@ -24,11 +24,11 @@ if(isset($_GET['accion'])){
         }
     }//Fin listar
 
-    if($_GET['accion']=='vernoticia'){
+    if($_POST['accion']=='vernoticia'){
         echo json_encode($M->verNoticia($_GET['id']));
     }
     
-    if($_GET['accion']=='listarData'){
+    if($_POST['accion']=='listarData'){
         $data=$M->noticiasListar();
         $c=1;
         foreach($data as $row){
@@ -60,14 +60,25 @@ if(isset($_GET['accion'])){
         }
     }
     
-    if($_GET["accion"]=="registrar"){
-        $E->__SET('titulo',$_GET['titulo']);
-        $E->__SET('subtitulo',$_GET['subtitulo']);
-        $E->__SET('categoria',$_GET['categoria']);
-        $E->__SET('image',$_GET['image']);
-        $E->__SET('descripcion',$_GET['descripcion']);
-        $E->__SET('redactor',$_GET['redactor']);
+    if($_POST["accion"]=="registrar"){
+        date_default_timezone_set('UTC');
+        date_default_timezone_set("America/Lima");
+        $img = $_POST['titulo']."-".date('dmy')."-".date('his');
+
+        $E->__SET('titulo',$_POST['titulo']);
+        $E->__SET('subtitulo',$_POST['subtitulo']);
+        $E->__SET('categoria',$_POST['categoria']);
+        $E->__SET('image',$img);
+        $E->__SET('descripcion',$_POST['descripcion']);
+        $E->__SET('redactor',$_POST['redactor']);
         $M->Registrar($E);
+        $dir='../resource/img/';
+        $file_upload = $dir.$img."jpg";
+        if(move_uploaded_file($_FILES['image']['tmp_name'],$file_upload)){
+            echo"se subio";
+        }else{
+            echo "no se subio";
+        }
     }
 }//fin isset = accion
 ?>

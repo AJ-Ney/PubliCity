@@ -1,53 +1,33 @@
 $("document").ready(function(){
-    var img;
-    var objDescripcion = CKEDITOR.replace('descripcion',{
-        toolbar: [
-            { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
-            { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-            { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
-            { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-            '/',
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-            { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-            { name: 'insert', items: ['HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-            '/',
-            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-            { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-            { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-            { name: 'others', items: [ '-' ] },
-            { name: 'about', items: [ 'About' ] }
-        ]
-    });
+    var objDescripcion = CKEDITOR.replace('descripcion');
     Listar();
     cCategoria();
-    $(document).on('change', '#imagen-file', function(e){
-        img = URL.createObjectURL(e.target.files[0]);
-    })
+    
     $("#publicar").click(function(){
-        var datos = {
-            'accion':'registrar',
-            'titulo':$("#titulo").val(),
-            'subtitulo':$("#subtitulo").val(),
-            'categoria':$("#categoria").val(),
-            'image':img,
-            'descripcion':objDescripcion.getData(),
-            'redactor':$("#redactor").val()
-        }
+        var datos = new FormData();
+        datos.append("titulo",$("#titulo").val());
+        datos.append("subtitulo",$("#subtitulo").val());
+        datos.append("categoria",$("#categoria").val());
+        datos.append("image",$("#imagen-file")[0].files[0]);
+        datos.append("descripcion",objDescripcion.getData());
+        datos.append("redactor",$("#redactor").val());
         $.ajax({
-            url:'./../controller/noticia.controller.php',
-            type:'GET',
+            url:'../controller/noticia.controller.php',
+            type:'POST',
             data:datos,
-            success:function(rpta){
-                console.log(rpta);
+            contentType:false,
+            processData:false,
+            cache:false,
+            success:function(e){
+                alert(e);
             }
         })
     })/* Fin registro */
 });
 function Listar(){
     $.ajax({
-        url:'./../controller/noticia.controller.php',
-        type:'GET',
+        url:'../controller/noticia.controller.php',
+        type:'POST',
         data:'accion=listarData',
         success:function(rpta){
             var table = $('#datable').DataTable();
@@ -60,7 +40,7 @@ function Listar(){
 function cCategoria(){
     $.ajax({
         url:'./../controller/categoria.controler.php',
-        type:'GET',
+        type:'POST',
         data:'accion=cboCategoria',
         success:function(rpta){
             $("#categoria").html('<option value="">Selecciona una...</option>'+rpta);
