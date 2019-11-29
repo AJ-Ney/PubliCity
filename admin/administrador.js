@@ -19,7 +19,7 @@ $("document").ready(function(){
             processData:false,
             cache:false,
             success:function(e){
-                alert(e);
+                
             }
         })
     })/* Fin registro */
@@ -27,7 +27,7 @@ $("document").ready(function(){
 function Listar(){
     $.ajax({
         url:'../controller/noticia.controller.php',
-        type:'POST',
+        type:'GET',
         data:'accion=listarData',
         success:function(rpta){
             var table = $('#datable').DataTable();
@@ -39,8 +39,8 @@ function Listar(){
 }
 function cCategoria(){
     $.ajax({
-        url:'./../controller/categoria.controler.php',
-        type:'POST',
+        url:'../controller/categoria.controler.php',
+        type:'GET',
         data:'accion=cboCategoria',
         success:function(rpta){
             $("#categoria").html('<option value="">Selecciona una...</option>'+rpta);

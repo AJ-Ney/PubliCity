@@ -5,13 +5,34 @@ require_once '../model/noticia/noticia.modelo.php';
 
 $E = new NoticiaE();
 $M = new NoticiaM();
+if(isset($_POST['titulo'])){
+        date_default_timezone_set('UTC');
+        date_default_timezone_set("America/Lima");
+        $img = $_POST['titulo'].date('dmy').date('his');
+        $dir='../resource/img/';
+        $E->__SET('titulo',$_POST['titulo']);
+        $E->__SET('subtitulo',$_POST['subtitulo']);
+        $E->__SET('categoria',$_POST['categoria']);
+        $E->__SET('image',$dir.$img.'.jpg');
+        $E->__SET('descripcion',$_POST['descripcion']);
+        $E->__SET('redactor',$_POST['redactor']);
+        $M->Registrar($E);
+        
+        $file_upload = $dir.$img.".jpg";
+        if(move_uploaded_file($_FILES['image']['tmp_name'],$file_upload)){
+            echo"se subio";
+            echo($_FILES['image']['tmp_name'].' '.$file_upload);
+        }else{
+            echo "no se subio";
+        }
+}
+if(isset($_GET['accion'])){
 
-if(isset($_POST['accion'])){
-    if($_POST['accion']=='listar'){
+    if($_GET['accion']=='listar'){
         $data = $M->Listar();
         foreach($data as $row){
             echo '<section class="banner">';
-                echo '<img src="./'.$row->image.'" alt="">';
+                echo '<img src="'.substr($row->image,3).'" alt="">';
                 echo '<div class="contenedortexto">';
                     echo '<a data-id="'.$row->id.'" href="#modal" id="linknoticia">';
                         echo '<h2>'.$row->titulo.'</h2>';
@@ -24,11 +45,11 @@ if(isset($_POST['accion'])){
         }
     }//Fin listar
 
-    if($_POST['accion']=='vernoticia'){
+    if($_GET['accion']=='vernoticia'){
         echo json_encode($M->verNoticia($_GET['id']));
     }
     
-    if($_POST['accion']=='listarData'){
+    if($_GET['accion']=='listarData'){
         $data=$M->noticiasListar();
         $c=1;
         foreach($data as $row){
@@ -49,7 +70,7 @@ if(isset($_POST['accion'])){
                     '<td class="centro">'.$modificado.'</td>'.
                     '<td class="centro">'.$row->nvisitas.'</td>'.
                     '<td>
-                    <div class="imagen"><img src="./../'.$row->image.'" alt=""></div>
+                    <div class="imagen"><img src="./'.$row->image.'" alt=""></div>
                     </td>'.
                     '<td class="centro">
                     <a href="#" class="modificar" data-id="'.$row->id.'" title="Modificar"><i class="fa fa-edit text-primary"></i></a>
@@ -60,25 +81,5 @@ if(isset($_POST['accion'])){
         }
     }
     
-    if($_POST["accion"]=="registrar"){
-        date_default_timezone_set('UTC');
-        date_default_timezone_set("America/Lima");
-        $img = $_POST['titulo']."-".date('dmy')."-".date('his');
-
-        $E->__SET('titulo',$_POST['titulo']);
-        $E->__SET('subtitulo',$_POST['subtitulo']);
-        $E->__SET('categoria',$_POST['categoria']);
-        $E->__SET('image',$img);
-        $E->__SET('descripcion',$_POST['descripcion']);
-        $E->__SET('redactor',$_POST['redactor']);
-        $M->Registrar($E);
-        $dir='../resource/img/';
-        $file_upload = $dir.$img."jpg";
-        if(move_uploaded_file($_FILES['image']['tmp_name'],$file_upload)){
-            echo"se subio";
-        }else{
-            echo "no se subio";
-        }
-    }
 }//fin isset = accion
 ?>
