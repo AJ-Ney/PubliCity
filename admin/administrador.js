@@ -1,4 +1,5 @@
 $("document").ready(function(){
+    var img;
     var objDescripcion = CKEDITOR.replace('descripcion',{
         toolbar: [
             { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
@@ -20,15 +21,16 @@ $("document").ready(function(){
     });
     Listar();
     cCategoria();
+    $(document).on('change', '#imagen-file', function(e){
+        img = URL.createObjectURL(e.target.files[0]);
+    })
     $("#publicar").click(function(){
-        var forData = new FormData
-        var img = $("#imagen-file").prop("files");
         var datos = {
             'accion':'registrar',
             'titulo':$("#titulo").val(),
             'subtitulo':$("#subtitulo").val(),
             'categoria':$("#categoria").val(),
-            'image':img['tmp_name', 'name'],
+            'image':img,
             'descripcion':objDescripcion.getData(),
             'redactor':$("#redactor").val()
         }
