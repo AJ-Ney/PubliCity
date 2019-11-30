@@ -21,8 +21,21 @@ class NoticiaM extends Core{
 
     public function verNoticia($id){
         try {
-            $stmt=$this->pdo->prepare(("call sp_noticia_ver(?)"));
+            /* Ver noticia */
+            $stmt=$this->pdo->prepare("call sp_noticia_ver(?)");
             $stmt->execute(array($id));
+            /* Sumar visita */
+            return $stmt->fetch(PDO::FETCH_OBJ);
+        } catch (Exception $th) {
+            die($th->getMessage());
+        }
+    }
+    public function observarNoticia($id){
+        try {
+            /* Ver noticia */
+            $stmt=$this->pdo->prepare("call sp_noticia_observar(?)");
+            $stmt->execute(array($id));
+            /* Sumar visita */
             return $stmt->fetch(PDO::FETCH_OBJ);
         } catch (Exception $th) {
             die($th->getMessage());
@@ -57,12 +70,11 @@ class NoticiaM extends Core{
 
     public function Modificar(NoticiaE $obj){
         try {
-            $stmt=$this->pdo->prepare("call sp_noticias_modificar(?,?,?,?,?,?,?)");
+            $stmt=$this->pdo->prepare("call sp_noticias_modificar(?,?,?,?,?,?)");
             $stmt->execute(array(
                 $obj->__GET('id'),
                 $obj->__GET('categoria'),
                 trim($obj->__GET('titulo')),
-                $obj->__GET('image'),
                 trim($obj->__GET('subtitulo')),
                 trim($obj->__GET('descripcion')),
                 trim($obj->__GET('redactor'))
@@ -83,16 +95,6 @@ class NoticiaM extends Core{
         }
     }
 
-    public function Contador(NoticiaE $obj){
-        try {
-            $stmt=$this->pdo->prepare('call sp_visitas_suma(?)');
-            $stmt->execute(array(
-                $obj->__GET('nvisitas')
-            ));//Fin execute
-        } catch (Exception $th) {
-            die($th->getMessage());
-        }
-    }
 
 }
 ?>

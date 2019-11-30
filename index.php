@@ -4,6 +4,9 @@
     <!-- Noticias desde la mas vista a la menos -->
     </main>
     
+    <?php
+        include 'lib/include/footer.php';
+    ?>
     <aside id="modal" class="modal">
         <div class="content-modal">
             <header class="header-modal">
@@ -14,38 +17,32 @@
             <article>
                 <!-- contenido -->
                 <div class="cont-text">
-                    <h2 id="titulo-modal">Titulo 1</h2>
-                    <h4 id="subtitulo-modal">Subtituli Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla omnis unde, voluptate, nisi beatae dolores veritatis iusto earum ducimus recusandae ulla</h4>
+                    <h2 id="titulo-modal"></h2>
+                    <h4 id="subtitulo-modal"></h4>
                 </div>
                 <div class="contenidonoticia">
                     <p>
-                    <img class="img-noti" id="img-modal" src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illo officia eveniet. Velit aliquid natus excepturi. Deserunt aut itaque neque! Provident cum odio maxime molestiae suscipit expedita quod natus exercitationem!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae aliquam sequi ex? Facilis voluptates vero blanditiis voluptatem? Reiciendis incidunt maiores eos labore sit at dolores quaerat tempora ducimus rerum?
-                    Delectus, quibusdam. Laudantium dolores cumque corrupti animi quo error sequi, unde excepturi optio molestiae eligendi deserunt corporis quis hic, reprehenderit, eveniet pariatur eaque ut perspiciatis vel voluptas! Aperiam, vitae tempore?
-                    Ratione quo architecto atque ab officia blanditiis earum dolore aspernatur veniam deserunt itaque eveniet non est hic dolorem id, quidem magnam debitis incidunt? Sit neque obcaecati beatae velit accusantium perspiciatis!
+                    <img class="img-noti" id="img-modal" src="" alt="Noticia">
+                    
                     </p>
                 </div>
             </article>
             <hr>
             <footer>
                 <p class="redactor">
-                &nbsp;&nbsp;&nbsp;&nbsp;Redactor 1
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
                 <p class="publicado">
-                    Publicado el: 24/11/2019
+                    
                     &nbsp;&nbsp;
-                    <span><i id="views">Leidas:</i></span>
+                    <span><i id="views"></i></span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
                 <!-- final del modal -->
             </footer>
         </div>
     </aside>
-
-
     <?php 
-        include 'lib/include/footer.php';
         include 'lib/include/footer.file.php';
     ?>
     <script src="admin/noticias.js"></script>

@@ -4,16 +4,17 @@
     letter-spacing: .2rem;
 }
 body{
-    margin-top: 13rem;
+    margin-top: 10rem;
+    width: 100%;
+    height: 100%;
 }
 main{
     width: 100%;
     text-align: center;
-    
 }
 .banner{
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 .banner img{
     width: 60%;

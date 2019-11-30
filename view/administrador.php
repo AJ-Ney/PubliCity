@@ -21,7 +21,7 @@
       <div class="cont-logo"><h1 class="logo"><a href="#">PubliCity</a></h1></div>
       <div class="nav">
       <a href="#modal">Nueva noticia</a>
-      <a href="#">Ver noticias</a>
+      <a href="../index.php">Ver noticias</a>
       </div>
     </div>
 </header>

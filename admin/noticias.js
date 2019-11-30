@@ -8,7 +8,7 @@ $(document).ready(function(){
             type:'GET',
             data:'accion=vernoticia&id='+id,
             success:function(rpta){
-                console.log(datos = JSON.parse(rpta));
+                var datos=JSON.parse(rpta);
                 $("#titulo-modal").html(datos.titulo);
                 $("#subtitulo-modal").html(datos.subtitulo);
                 $(".contenidonoticia p").html('<img class="img-noti"; id="img-modal" src="'+datos.image.substr(3)+'" alt="Noticia">'+datos.descripcion);

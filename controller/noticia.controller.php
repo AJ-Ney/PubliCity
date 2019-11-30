@@ -38,7 +38,7 @@ if(isset($_GET['accion'])){
                         echo '<h2>'.$row->titulo.'</h2>';
                         echo '<p>'.$row->subtitulo.'</p>';
                         echo '<p class="redactor">&nbsp;&nbsp;&nbsp;&nbsp;'.$row->redactor.'</p>';
-                        echo '<p class="publicado">'.$row->created_at.'<span><i>&nbsp;&nbsp;&nbsp;&nbsp;Leidas: '.$row->nvisitas.'</i></span>'.'</p>';
+                        echo '<p class="publicado">Publicado el:'.$row->created_at.'<span><i>&nbsp;&nbsp;&nbsp;&nbsp;Leidas: '.$row->nvisitas.'</i></span>'.'</p>';
                     echo '</a>';
                 echo '</div>';
             echo '</section>';
@@ -48,7 +48,11 @@ if(isset($_GET['accion'])){
     if($_GET['accion']=='vernoticia'){
         echo json_encode($M->verNoticia($_GET['id']));
     }
-    
+
+    if($_GET['accion']=='verobservar'){
+        echo json_encode($M->observarNoticia($_GET['id']));
+    }
+
     if($_GET['accion']=='listarData'){
         $data=$M->noticiasListar();
         $c=1;
@@ -73,13 +77,27 @@ if(isset($_GET['accion'])){
                     <div class="imagen"><img src="./'.$row->image.'" alt=""></div>
                     </td>'.
                     '<td class="centro">
-                    <a href="#" class="modificar" data-id="'.$row->id.'" title="Modificar"><i class="fa fa-edit text-primary"></i></a>
+                    <a href="#modal" class="modificar" data-id="'.$row->id.'" title="Modificar"><i class="fa fa-edit text-primary"></i></a>
                     <a href="#" class="eliminar" data-id="'.$row->id.'" title="Eliminar"><i class="fas fa-trash-alt text-danger"></i></a>
                     </td>'.
                 '</tr>'
                 ;
         }
+    }    
+
+    if($_GET['accion']=='modificar'){
+        $E->__SET('id',$_GET['id']);
+        $E->__SET('titulo',$_GET['titulo']);
+        $E->__SET('subtitulo',$_GET['subtitulo']);
+        $E->__SET('categoria',$_GET['categoria']);
+        $E->__SET('descripcion',$_GET['descripcion']);
+        $E->__SET('redactor',$_GET['redactor']);
+        $M->Modificar($E);
     }
-    
+
+    if($_GET['accion']=='eliminar'){
+        $E->__SET('id', $_GET['id']);
+        $M->Eliminar($E);
+    }
 }//fin isset = accion
 ?>
