@@ -30,7 +30,7 @@
     
   <section class="main">      
         <section class="table-responsive">
-          <table class="table-bordered" id="datable" width="100%" cellspacing="0">        
+          <table class="table-bordered" id="datable" cellspacing="0">        
             <thead class="text-center">                
               <tr>
                 <th>N°</th>

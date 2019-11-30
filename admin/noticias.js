@@ -11,7 +11,7 @@ $(document).ready(function(){
                 console.log(datos = JSON.parse(rpta));
                 $("#titulo-modal").html(datos.titulo);
                 $("#subtitulo-modal").html(datos.subtitulo);
-                $(".contenidonoticia").html(datos.descripcion+'<img class="img-noti"; id="img-modal" src="'+datos.image.substr(3)+'" alt="Noticia">');
+                $(".contenidonoticia p").html('<img class="img-noti"; id="img-modal" src="'+datos.image.substr(3)+'" alt="Noticia">'+datos.descripcion);
             }
         })
     })

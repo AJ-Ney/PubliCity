@@ -61,14 +61,14 @@ if(isset($_GET['accion'])){
             echo
 
                 '<tr>'.
-                    '<td class="centro">'.$c++.'</td>'.
-                    '<td>'.$row->titulo.'</td>'.
-                    '<td>'.$row->subtitulo.'</td>'.
+                    '<td class="text-center">'.$c++.'</td>'.
+                    '<td>'.substr($row->titulo,0,15).'...'.'</td>'.
+                    '<td>'.substr($row->subtitulo,0,15).'...'.'</td>'.
                     '<td>'.substr($row->descripcion,0,15).'...'.'</td>'.
-                    '<td>'.$row->redactor.'</td>'.
-                    '<td class="centro">'.$row->created_at.'</td>'.
-                    '<td class="centro">'.$modificado.'</td>'.
-                    '<td class="centro">'.$row->nvisitas.'</td>'.
+                    '<td>'.substr($row->redactor,0,15).'...'.'</td>'.
+                    '<td class="text-center">'.$row->created_at.'</td>'.
+                    '<td class="text-center">'.$modificado.'</td>'.
+                    '<td class="text-center">'.$row->nvisitas.'</td>'.
                     '<td>
                     <div class="imagen"><img src="./'.$row->image.'" alt=""></div>
                     </td>'.

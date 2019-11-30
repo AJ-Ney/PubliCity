@@ -2,15 +2,13 @@
 body{
     margin-top: 7rem;
 }
+
 #datable tbody tr td{
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0;
 }
 .text-center{
     text-align:center;
-}
-section tbody tr .centro{
-    text-align: center;
 }
 section tbody tr td .modificar{
     color: #0087FF;
@@ -31,16 +29,13 @@ section tbody tr td .imagen img:hover{
     width: 40rem;
     box-shadow: 0 0 15px 2px #000;
 }
+/* Estilos para el header */
+.cabezera .cont-logo{
+    float: left;
+}
 .main{
     width: 90%;
     margin: auto;
-}
-/* Estilos para el header */
-.cabezera .contenedorheader{
-    
-}
-.cabezera .cont-logo{
-    float: left;
 }
 .cabezera .nav{
     float: right;

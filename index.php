@@ -18,11 +18,13 @@
                     <h4 id="subtitulo-modal">Subtituli Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla omnis unde, voluptate, nisi beatae dolores veritatis iusto earum ducimus recusandae ulla</h4>
                 </div>
                 <div class="contenidonoticia">
+                    <p>
                     <img class="img-noti" id="img-modal" src="https://i.ytimg.com/vi/n4RMu7CZ5ow/maxresdefault.jpg" alt="Noticia">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illo officia eveniet. Velit aliquid natus excepturi. Deserunt aut itaque neque! Provident cum odio maxime molestiae suscipit expedita quod natus exercitationem!
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae aliquam sequi ex? Facilis voluptates vero blanditiis voluptatem? Reiciendis incidunt maiores eos labore sit at dolores quaerat tempora ducimus rerum?
                     Delectus, quibusdam. Laudantium dolores cumque corrupti animi quo error sequi, unde excepturi optio molestiae eligendi deserunt corporis quis hic, reprehenderit, eveniet pariatur eaque ut perspiciatis vel voluptas! Aperiam, vitae tempore?
                     Ratione quo architecto atque ab officia blanditiis earum dolore aspernatur veniam deserunt itaque eveniet non est hic dolorem id, quidem magnam debitis incidunt? Sit neque obcaecati beatae velit accusantium perspiciatis!
+                    </p>
                 </div>
             </article>
             <hr>

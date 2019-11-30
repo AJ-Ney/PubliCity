@@ -1,26 +1,39 @@
 .modal{
-    position: fixed;
+    /* position: fixed;
     top: -100vh;
     left: 0;
     z-index: 500;
     width: 100vw;
     height: 100vh;
     opacity: 0;
-    transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease; */
+    top: -120vh;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    display: flex;
+    transition: 2s ease;
 }
 
 .modal .content-modal{
-    width: 100%;
+    /* width: 100%;
     max-width: 70%;
     position: fixed;
-    left: 35%;
+    left: 30%;
     top: -100vh;
     transition: top 0.35s ease;
     margin-left: -250px;
     background-color: #fff;;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     border-radius: 2px;
-    z-index: 500;
+    z-index: 500; */
+
+    margin: auto;
+    width: 60%;
+    background: #fff;
+    border-radius: 1rem;
 }
 .modal h2{
     padding: .5em;
@@ -33,19 +46,16 @@
 
 }
 .close-modal{
-    color:#130604;
-    position: absolute;
-    top: 0.1em;
-    right: 0.375em;     
-    margin: 0;
-    padding: 5px;
+    color:#FFF;
+    float: right;
+    padding: .5em;
     font-weight: bold;
     font-size: 1.5em;
     text-decoration:none;
+    z-index: 501;
 }
-
 .modal a:hover{
-    color:#747474;
+    color:rgb(255, 38, 0);
 }
 .modal:target{
     opacity: 1;
@@ -58,12 +68,6 @@
     transition: top 0.25s ease;
 }
 @media (max-width: 796px){
-    .modal .content-modal{
-        width: 90%;
-        min-width: none;
-        left: 20%;
-        margin-left: 0;
-    }
 
 }
 
@@ -88,22 +92,25 @@ article .cont-text h2{
     text-align: left;
 }
 article .cont-text h4{
-    margin-bottom: 1.5rem;
+    padding: 0 1em;
+    text-align: justify;
+    letter-spacing: .01rem;
 }
 /* Contenido de la noticia */
-article .contenidonoticia{
-    font-family: 'Times New Roman', cursive;
-    letter-spacing: .01rem;
-    width: 100%;
-    text-align: justify;
-    padding: 1em;
-}
 article .contenidonoticia .img-noti{
     margin-left: 1em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     width: 60%;
     float: right;
 }
+article .contenidonoticia{
+    font-family: 'Times New Roman', cursive;
+    text-align: justify;
+    letter-spacing: .01rem;
+    width: 95%;
+    padding: 1em;
+}
+
 .content-modal article{
     margin-bottom: 2.5em;
 }
