@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./../lib/css/estilos.modal.css">
     <link rel="stylesheet" href="./../lib/css/header.css">
     <link rel="stylesheet" href="./../lib/css/body.css">
+    <link rel="stylesheet" href="./../lib/css/footer.index.css">
     <link rel="stylesheet" href="./../lib/css/footer.css">
     <link rel="stylesheet" href="./../lib/css/estilosDataTable.css">
     <link rel="stylesheet" href="./../lib/css/estilos.modal.registros.css">
